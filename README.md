@@ -1,62 +1,47 @@
 # breast_cancer_predictor_kyrgyzstan
+Topic: Medical data analysis for predicting BIRADS (breast imaging assessment category): Utilizing machine learning.
 
-Тема: Медицинский анализ данных для предсказания BIRADS( категория оценки маммографиских снимок): Использование машинного обучения.
+About the Data
+
+In the structure of oncological diseases in the Kyrgyz Republic, breast cancer occupies the first place, accounting for 18.5%. In 2020, a total of 615 new cases of breast cancer were registered. Breast cancer also ranks first in the mortality structure (8.9%). At this form of cancer, stages 3 and 4 are considered advanced, with their indicators being 26.5% and 12.4%, respectively. This means that 38.9% of new breast cancer cases are detected at late stages.
+
+The data were collected within the project "Early Diagnosis of Breast Cancer and Cervical Cancer in the Kyrgyz Republic using a Mobile Mammographic Center", initiated by the "Ergene" Public Fund, with the aim of providing equitable access to early diagnosis of common types of cancer in women in the regions using high-tech methods.
+
+The goal of this project is to study women's health for breast cancer, which is the leading cause of morbidity and mortality among oncological diseases in our country.
+
+Data Analysis
+
+Medical science extensively utilizes the advantages of modern data processing methods and machine learning for predicting various diseases and diagnosing patients. This article presents a study where we explored data analysis methods of a pre-processed data set about women undergoing mammography. In this article, we focused on predicting BIRADS (Breast Imaging Reporting and Data System) based on medical histories and mammographic images. BIRADS is a classification system of mammographic results that helps doctors standardize and describe patterns of breast changes detected.
+Before the data analysis, we conducted thorough cleaning, outlier removal, and filling in missing values. Then we performed data visualization using Python libraries for a deeper understanding of feature distribution and dependencies between them.
+In this article, we utilized visualization to highlight key aspects of the data and identify important features that could influence the prediction of BIRADS categories. Visualization allows for a clear representation of data structure, revealing patterns and correlations between features, and identifying outliers or anomalies that might affect prediction quality.
+Through visualization, we can analyze the relationships between various parameters of medical histories and mammographic images with the BIRADS category. For instance, it is possible to highlight specific characteristics that are more commonly found in patients with different BIRADS categories. This can help identify important features that can be used to improve prediction accuracy and assist doctors in making more informed decisions.
+Using visualization in data research significantly aids in understanding data structure, identifying patterns, and gathering insights that can be used to develop more effective BIRADS prediction models and improve diagnostic quality.
+In the next stage, we applied several machine learning models, such as Logistic Regression, Random Forest Classifier, Gradient Boosting Classifier, and Cat Boost Classifier. To obtain a more objective evaluation of the model performance, we applied several approaches and performance evaluation methods.
+The results of this research can be used in medical practice for more effective and accurate diagnosis of breast cancer in women. However, to get a more complete picture and to apply the models in practice, it is recommended to conduct additional research on larger data sets and to test the models on new patients to verify their effectiveness in real conditions.
+
+On the evaluation system used in reading mammographic images.
+BI-RADS assessment categories and their corresponding recommendations:
+Category 0 – incomplete data, unable to reach a conclusive conclusion from the visualization results, further examination is necessary. This category is only valid for screening examinations.
+Category 1 – normal mammography results. No formations, architectural disturbances, or suspicious calcifications.
+Category 2 – unequivocally benign changes.
+Category 3 – most likely a benign formation (up to 98% chance that it's a benign process), control visualization of changes in 6 months – mammography of one breast, meanwhile, the category remains 3. Later, with a stable picture, mammography of both breasts is recommended after 12 months. With a stable picture of identified changes, the category changes to 2 and control is scheduled in 12 months. This is a borderline category with dynamic control following the 6-12-12 months scheme.
+Category 4 – changes detected on mammograms are suspicious for a malignant process with a probability ranging from 2 to 94%:
+low probability, from 2 to 10% - BI-RADS 4a;
+medium (moderate) probability, from 10 to 50% - BI-RADS 4b;
+high probability, from 50 to 95% - BI-RADS 4c.
+Assignment of this category requires morphological verification through stereotactic core biopsy.
+Category 5 – malignant changes are likely, all identified signs indicate the presence of breast cancer.
+Category 6 – unequivocally malignant changes. This category includes patients with an already verified diagnosis of a malignant process in the breast.
 
 
-О данных
-
-В структуре онкологической заболеваемости в Кыргызской Республике 1 место
-занимает рак молочной железы – 18,5 %. В 2020 году зарегистрировано всего
-615 новых случаев рака молочной железы. Первое место в структуре смертности
-занимает также рак молочной железы (8,9 %). При этой форме рака
-запущенными считаются 3 и 4 стадии и их показатели, следующие: 26,5% и 12,4%.
-Т.е. 38,9% новых случаев рака молочной железы выявляются на поздних стадиях.
-
-Данные были собраны в рамках проекта «Ранняя диагностика рака молочной железы и рака шейки матки в Кыргызской Республике с использованием передвижного маммографического центра» по инициативе Общественного фонда «Эргэнэ», с целью обеспечения справедливого доступа к ранней диагностике распространенных видов рака у женщин в регионах с применением высокотехнологичных методов.
-
-Целью этого проекта является исследование здоровья женщин на рак
-молочной железы, являющегося ведущей причиной заболеваемости и смертности
-среди онкозаболеваний в нашей стране.
 
 
-Анализ данных
-
-Медицинская наука исчерпывающе использует преимущества современных методов обработки данных и машинного обучения для предсказания различных заболеваний и диагностики пациентов. В данной статье представлена работа, в которой мы исследовали методы анализа данных предварительно подготовленного набора данных о женщинах, проходящих маммографию. В данной статье мы сосредоточились на предсказании BIRADS (Breast Imaging Reporting and Data System) по данным анамнезов и маммографических снимков. BIRADS представляет собой систему классификации маммографических результатов, которая помогает врачам стандартизировать и описывать образцы обнаружения изменений в молочных железах.
-Перед анализом данных мы провели тщательную очистку, удаление выбросов и заполнение пропущенных значений. Затем мы произвели визуализацию данных с использованием библиотеки Python для более глубокого понимания распределения признаков и зависимостей между ними. 
-В данной статье мы использовали визуализацию для выделения ключевых аспектов данных и определения важных признаков, которые могут оказать влияние на предсказание категории BIRADS. Визуализация позволяет наглядно представить структуру данных, выявить закономерности и корреляции между признаками, а также выявить выбросы или аномалии, которые могут повлиять на качество предсказания.
-С помощью визуализации мы можем проанализировать взаимосвязи между различными параметрами анамнеза и маммографических снимков с категорией BIRADS. Например, возможно выделить определенные характеристики, которые чаще встречаются у пациентов с разными категориями BIRADS. Это может помочь выявить важные признаки, которые можно использовать для улучшения точности предсказания и помочь врачам принимать более информированные решения.
-Использование визуализации в исследовании данных оказывает значительную помощь в понимании структуры данных, выявлении паттернов и сборе инсайтов, которые могут быть использованы для разработки более эффективных моделей предсказания BIRADS и улучшения качества диагностики.
 
 
-На следующем этапе мы применили несколько моделей машинного обучения, таких как Logistic Regression, Random Forest Classifier, Gradient Boosting Classifier и Cat Boost Classifier. Чтобы получить более объективную оценку производительности моделей, мы применили несколько подходов и методов оценки производительности моделей.
-Результаты данного исследования могут быть использованы в медицинской практике для более эффективного и точного диагностирования рака молочной железы у женщин. Однако, для получения более полной картины и применения моделей на практике, рекомендуется провести дополнительные исследования на больших наборах данных и применить модели на новых пациентах для проверки их эффективности в реальных условиях.
 
 
-О применяемой системе оценки при чтении маммографических снимков
 
-Категории оценки BI-RADS и соответствующие им рекомендации
-Категория 0 – неполные данные, невозможно прийти к однозначному выводу
-по результатам визуализации, необходимо дообследование. Эта категория
-правомерна только при скрининговых обследованиях.
-Категория 1 – нормальные результаты маммографии. Нет образований,
-нарушений архитектоники или подозрительных кальцинатов.
-Категория 2 – безусловно, доброкачественные изменения.
-Категория 3 – наиболее вероятно доброкачественное образование (до 98% за
-то, что есть доброкачественный процесс), контрольная визуализация изменений
-через 6 месяцев – маммография одной молочной железы, при этом категория
-остается 3. Далее, при стабильной картине, рекомендована маммография обеих
-молочных желез через 12 месяцев. При стабильной картине выявленных
-изменений категория изменяется на 2 и контроль назначается через 12 месяцев.
-Пограничная категория, динамический контроль по схеме 6-12-12 месяцев.
-Категория 4 – выявленные изменения на маммограммах подозрительны на
-злокачественный процесс с вероятностью от 2 до 94%:
-низкая степень вероятности, от 2 до 10% - BI-RADS 4a;
-средняя (умеренная) степень вероятности, от 10 до 50% - BI-RADS 4b;
-высокая степень вероятности, от 50 до 95% - BI-RADS 4c.
-При присвоении данной категории необходима морфологическая верификация
-путем выполнения стереотаксической трепан-биопсии.
-Категория 5 – вероятны злокачественные изменения, все выявленные признаки
-указывают на наличие рака молочной железы.
-Категория 6 – безусловно, злокачественные изменения. Под эту категорию
-подпадают пациентки с уже верифицированным диагнозом злокачественный
-процесс молочной железы.
+
+
+
+
